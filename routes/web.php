@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Client\StoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::group(['middleware' => 'auth', 'prefix' => 'my'], function () {
+    Route::get('/stores', [StoreController::class, 'index']);
+});
+
+require __DIR__ . '/auth.php';
