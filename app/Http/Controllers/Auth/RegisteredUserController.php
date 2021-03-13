@@ -10,6 +10,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 
 class RegisteredUserController extends Controller
 {
@@ -47,7 +48,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]));
 
-        Store::create([
+        $store = Store::create([
             'owner_id' => $user->id,
             'name' => $request->store_name,
             'identifier' => $request->store_identifier
@@ -55,6 +56,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+        return Redirect::to("http://$store->identifier.localhost/admin");
     }
 }
