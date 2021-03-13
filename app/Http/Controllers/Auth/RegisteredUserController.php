@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Store;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -36,6 +37,8 @@ class RegisteredUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
+            'store_name' => 'required|string|unique:stores,name',
+            'store_identifier' => 'required|string|unique:stores,identifier'
         ]);
 
         Auth::login($user = User::create([
@@ -43,6 +46,12 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]));
+
+        Store::create([
+            'owner_id' => $user->id,
+            'name' => $request->store_name,
+            'identifier' => $request->store_identifier
+        ]);
 
         event(new Registered($user));
 
