@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Client\StoreController;
+use App\Models\Store;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::domain('{store}.localhost')->group(function () {
+    Route::get('admin', function (Store $store) {
+        dd($store);
+    });
+});
 
 Route::get('/', function () {
     return view('welcome');
