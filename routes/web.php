@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Client\CategoryController;
 use App\Http\Controllers\Client\StoreController;
-use App\Models\Store;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::domain('{store}.localhost')->group(function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::get('dashboard', [StoreController::class, 'index']);
+        Route::get('categories', [CategoryController::class, 'index']);
     });
 });
 
