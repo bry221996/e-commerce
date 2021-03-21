@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain('{store}.localhost')->group(function () {
     Route::get('admin', function (Store $store) {
-        dd($store);
+        // dd($store);
+        return view('client.store.index');
     });
 });
 
