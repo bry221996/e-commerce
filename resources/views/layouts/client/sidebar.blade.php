@@ -1,13 +1,13 @@
 <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-        <a href="index.html">Stisla</a>
+        <a href="index.html">{{$store->name}}</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
         <a href="index.html">St</a>
     </div>
     <ul class="sidebar-menu">
         <li class="menu-header">Dashboard</li>
-        <li class="dropdown">
+        <!-- <li class="dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             <ul class="dropdown-menu">
                 <li><a class="nav-link" href="dashboard-general.html">General Dashboard</a></li>
@@ -22,9 +22,9 @@
                 <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
                 <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
             </ul>
-        </li>
-        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-        <li class="dropdown">
+        </li> -->
+        <li><a class="nav-link" href="blank.html"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+        <!-- <li class="dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
             <ul class="dropdown-menu">
                 <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
@@ -140,12 +140,6 @@
                 <li><a href="utilities-subscribe.html">Subscribe</a></li>
             </ul>
         </li>
-        <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
+        <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li> -->
     </ul>
-    <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
-        <a href="documentation.html" class="btn btn-primary btn-lg btn-icon-split btn-block">
-            <i class="far fa-question-circle"></i>
-            <div>Documentation</div>
-        </a>
-    </div>
 </aside>

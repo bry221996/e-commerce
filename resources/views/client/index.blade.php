@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-client-layout :store="$store">
     <section class="section">
         <div class="section-header">
             <h1>Default Layout</h1>
@@ -30,4 +30,4 @@
             </div>
         </div>
     </section>
-</x-app-layout>
+</x-client-layout>

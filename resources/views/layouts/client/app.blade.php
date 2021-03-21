@@ -108,7 +108,7 @@
                 </ul>
             </nav>
             <div class="main-sidebar">
-                @include('layouts.sidebar')
+                @include('layouts.client.sidebar')
             </div>
 
             <!-- Main Content -->
@@ -116,7 +116,7 @@
                 {{ $slot }}
             </div>
 
-            @include('layouts.footer')
+            @include('layouts.client.footer')
 
         </div>
     </div>
