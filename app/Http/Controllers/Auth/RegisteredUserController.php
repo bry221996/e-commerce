@@ -56,6 +56,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return Redirect::to("http://$store->identifier.localhost/admin");
+        return Redirect::to("http://$store->identifier.localhost/admin/dashboard");
     }
 }

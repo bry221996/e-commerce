@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::domain('{store}.localhost')->group(function () {
-    Route::get('admin', [StoreController::class, 'index']);
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('dashboard', [StoreController::class, 'index']);
+    });
 });
 
 Route::get('/', function () {
