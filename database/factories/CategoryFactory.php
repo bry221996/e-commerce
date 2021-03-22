@@ -23,10 +23,9 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'id' => $this->faker->unique()->uuid,
             'store_id' => Store::factory()->create()->id,
-            'title' => $this->faker->words,
-            'description' => $this->faker->sentence
+            'title' => $this->faker->words(3, true),
+            'description' => $this->faker->sentence(10),
         ]; 
     }
 }

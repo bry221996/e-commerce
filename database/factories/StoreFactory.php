@@ -26,7 +26,6 @@ class StoreFactory extends Factory
         $company = $this->faker->unique()->company;
 
         return [
-            'id' => $this->faker->unique()->uuid,
             'owner_id' => User::factory()->create()->id,
             'name' => $company,
             'identifier' => Str::slug($company)
