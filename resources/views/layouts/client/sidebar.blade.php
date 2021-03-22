@@ -25,6 +25,7 @@
         </li> -->
         <li><a class="nav-link" href="/admin/dashboard"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
         <li><a class="nav-link" href="/admin/categories"><i class="fas fa-columns"></i> <span>Categories</span></a></li>
+        <li><a class="nav-link" href="/admin/products"><i class="fas fa-shopping-cart"></i> <span>Products</span></a></li>
         <!-- <li class="dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
             <ul class="dropdown-menu">
