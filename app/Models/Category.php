@@ -2,38 +2,16 @@
 
 namespace App\Models;
 
+use App\Traits\UuidAsPrimary;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Str;
 
 class Category extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, UuidAsPrimary;
 
     protected $guarded = [];
-
-    /**
-     * The "booted" method of the model.
-     *
-     * @return void
-     */
-    protected static function booted()
-    {
-        static::creating(function ($category) {
-            $category->id = Str::uuid()->toString();
-        });
-    }
-
-    public function getKeyType()
-    {
-        return 'string';
-    }
-
-    public function getIncrementing()
-    {
-        return false;
-    }
 
     public function getStatusAttribute()
     {
