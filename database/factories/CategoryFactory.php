@@ -26,6 +26,7 @@ class CategoryFactory extends Factory
             'store_id' => Store::factory()->create()->id,
             'title' => $this->faker->words(3, true),
             'description' => $this->faker->sentence(10),
+            'parent_id' => null,
         ]; 
     }
 }
