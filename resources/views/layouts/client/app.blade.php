@@ -129,6 +129,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="{{ asset('js/stisla/stisla.js') }}"></script>
     <script src="{{ asset('js/stisla/scripts.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>
