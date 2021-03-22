@@ -34,6 +34,6 @@ class RegistrationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect("http://$storeIdentifier.localhost/admin");
+        $response->assertRedirect("http://$storeIdentifier.localhost/admin/dashboard");
     }
 }
