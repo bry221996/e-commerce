@@ -24,8 +24,28 @@ class Store extends Model
         });
     }
 
+    /**
+     * Get the value indicating whether the IDs are incrementing.
+     *
+     * @return bool
+     */
+    public function getIncrementing()
+    {
+        return false;
+    }
+
     public function getRouteKeyName()
     {
         return 'identifier';
+    }
+
+    public function getKeyType()
+    {
+        return 'string';
+    }
+
+    public function getBaseUriAttribute()
+    {
+        return "http://$this->identifier.localhost";
     }
 }
