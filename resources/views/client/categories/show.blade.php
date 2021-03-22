@@ -4,29 +4,10 @@
             <h1>Categories</h1>
         </div>
 
-        @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-        @endif
-
         <div class="section-body">
             <div class="card">
                 <div class="card-header">
-                    <h4>Main Categories</h4>
-                    <div class="card-header-form">
-                        <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <a class="btn ml-2 btn-primary" href="/admin/categories/create">
-                        Add New Category
-                    </a>
+                    <h4>{{ $category->title }} Sub Categories</h4>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -38,7 +19,7 @@
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
-                                @foreach ($categories->items() as $category)
+                                @foreach ($subCategories->items() as $category)
                                 <tr>
                                     <td width="20%">{{ $category->title }}</td>
                                     <td width="45%">{{ $category->description }}</td>
@@ -48,10 +29,6 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="/admin/categories/{{$category->id}}" class="btn btn-info">
-                                            <i class="fas fa-sitemap"></i>
-                                            Sub Categories
-                                        </a>
                                         <a href="/admin/categories/{{$category->id}}/edit" class="btn btn-secondary">
                                             <i class="fas fa-edit"></i>
                                             Edit
@@ -67,7 +44,7 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $categories->links() }}
+                    {{ $subCategories->links() }}
                 </div>
             </div>
         </div>
@@ -108,5 +85,4 @@
         });
     </script>
     @endpush
-
 </x-client-layout>
