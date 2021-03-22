@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->boolean('is_active')->default(0);
             $table->uuid('parent_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('store_id')
                 ->references('id')
