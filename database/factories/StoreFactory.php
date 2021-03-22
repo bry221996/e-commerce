@@ -3,7 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Store;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class StoreFactory extends Factory
 {
@@ -21,8 +23,13 @@ class StoreFactory extends Factory
      */
     public function definition()
     {
+        $company = $this->faker->unique()->company;
+
         return [
-            //
+            'id' => $this->faker->unique()->uuid,
+            'owner_id' => User::factory()->create()->id,
+            'name' => $company,
+            'identifier' => Str::slug($company)
         ];
     }
 }
