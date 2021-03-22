@@ -20,6 +20,26 @@ if (window.Chart) {
     Chart.defaults.global.tooltips.mode = "nearest";
 }
 
+jQuery(document).ready(function () {
+    $("form input").focus(function () {
+        // get selected input error container
+        $(this).siblings(".invalid-feedback").hide();
+        $(this).removeClass("is-invalid");
+    });
+
+    $("form textarea").focus(function () {
+        // get selected input error container
+        $(this).siblings(".invalid-feedback").hide();
+        $(this).removeClass("is-invalid");
+    });
+
+    $("form select").focus(function () {
+        // get selected input error container
+        $(this).siblings(".invalid-feedback").hide();
+        $(this).removeClass("is-invalid");
+    });
+});
+
 // DropzoneJS
 if (window.Dropzone) {
     Dropzone.autoDiscover = false;
